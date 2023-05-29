@@ -1,2 +1,3 @@
 env
 admin/.db-data
+admin/__pycache__
