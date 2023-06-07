@@ -8,6 +8,9 @@ This is a simple implementation of the microservice architecture in Django and t
 Clone the repository and in the same directory as '.env.example' create a '.env' configuration file and replace the environment variables with your own.
 
 
+Create a python virtual environment
+
+
 Move to Project>admin directory
 
 
