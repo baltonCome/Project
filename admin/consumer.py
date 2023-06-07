@@ -1,13 +1,17 @@
 import json
 import pika, django, os
-
-from products.models import Product
-
+from dotenv import load_dotenv
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'admin.settings')
 django.setup()
 
-params = pika.URLParameters('amqps://waezmnsx:5ATtwcDKyZKVkAqxbGbW3mvrXcbfSlyv@goose.rmq2.cloudamqp.com/waezmnsx')
+from products.models import Product
+
+load_dotenv()
+
+queue_url = os.getenv('RABBIT_MQ_URL')
+
+params = pika.URLParameters(queue_url)
 
 connection = pika.BlockingConnection(params)
 
